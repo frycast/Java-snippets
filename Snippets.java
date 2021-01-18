@@ -3,8 +3,14 @@ Useful resources:
 * https://www.w3schools.com/java/
 */
 
+class S {
+    void m1() {
+        System.out.println("S initialising");
+    }
+}
+
 // %% Data types and casting
-class S1 {
+class S1 extends S {
     void m1() {
 
         // Primitive data types (can be null)
@@ -48,13 +54,11 @@ class S1 {
         System.out.println(x+y+z+w+d+e+s+f);
         System.out.println(b);
         System.out.println(c);
-
-
     }
 }
 
 // %% Operators
-class S2 {
+class S2 extends S {
     void m1() {
 
         // Addition operator
@@ -72,3 +76,155 @@ class S2 {
     }
 }
 
+// %% String methods
+class S3 extends S {
+    void m1() {
+        String txt = "Hello World";
+        String txt2 = "!";
+        System.out.println(txt.toUpperCase());  
+        System.out.println(txt.toLowerCase());
+        System.out.println(txt.indexOf("World"));
+        System.out.println(txt.concat(txt2));
+        System.out.println("\\ It\'s some \"quotations\" \\");
+    }
+}
+
+// %% Math
+class S4 extends S {
+    void m1() {
+        Math.max(5, 10);
+        Math.min(5, 10);
+        Math.sqrt(64);
+        Math.abs(-4.7);
+        Math.random(); // In [0.0, 1.0)
+        int r = (int)(Math.random() * 101);  // from 0 to 100
+        System.out.println("Random number = " + r);
+    }
+}
+
+// %% Conditionals
+class S5 extends S {
+    void m1() {
+        // if statement
+        System.out.println("if statement");
+        int time = 17;
+        if (time < 10) {
+            System.out.println("Good morning");
+        } else if (time < 20) {
+            System.out.println("Good day");
+        } else {
+            System.out.println("Good evening");
+        }
+
+        // ternary operator
+        System.out.println("ternary operator");
+        String result = (time < 18) ? "Good day" : "Good evening";
+        System.out.println(result);
+
+        // switch block
+        System.out.println("switch block");
+        int day = 2;
+        switch (day) {
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            default:
+                System.out.println("Another day");
+        }
+
+        // while loop
+        System.out.println("while loop");
+        int i = 0;
+        while (i < 5) {
+            System.out.println(i);
+            i++;
+        }
+
+        // do while loop
+        System.out.println("do while loop");
+        i = 0;
+        do {
+            System.out.println(i);
+            i++;
+        } while (i < 5);
+
+        // for loop
+        System.out.println("for loop");
+        for (int k = 0; k < 5; k++) {
+            System.out.println(k);
+        }
+
+        // for-each loop
+        System.out.println("for each loop");
+        String[] cars = { "Volvo", "BMW", "Ford", "Mazda" };
+        for (String k : cars) {
+            System.out.println(k);
+        }
+
+        // break out of a loop
+        System.out.println("Break out of for loop");
+        for (int k = 0; k < 10; k++) {
+            if (k == 4) {
+                break;
+            }
+            System.out.println(k);
+        }
+
+        // continue to skip rest of loop
+        System.out.println("Continue in for loop");
+        for (int k = 0; k < 10; k++) {
+            if (k == 4) {
+              continue; // doesn't print 4
+            }
+            System.out.println(k);
+        }
+    }
+}
+
+// %% Arrays
+class S6 extends S {
+    void m1() {
+        // This can only be done at initialisation
+        String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+
+        System.out.println(cars[0]);
+        cars[0] = "Opel";
+        System.out.println(cars[0]);
+        System.out.println("Array length = " + cars.length);
+        System.out.println("Print 1D array with for");
+        for (int i = 0; i < cars.length; i++) {
+            System.out.println(cars[i]);
+        }
+        System.out.println("Print 1D array with for-each");
+        for (String i : cars) {
+            System.out.println(i);
+        }
+
+        // Multidimensional (jagged) arrays (not matrices)
+        int[][] myNumbers = { {1, 2, 3, 4}, {5, 6, 7} };
+        int x = myNumbers[1][2];
+        System.out.println(x); // Outputs 7
+        System.out.println("Print 2D array with for");
+        for (int i = 0; i < myNumbers.length; ++i) {
+            for(int j = 0; j < myNumbers[i].length; ++j) {
+              System.out.println(myNumbers[i][j]);
+            }
+        }
+        System.out.println("Print 2D array with for-each");
+        for (int[] row : myNumbers) {
+            for ( int ij : row ) {
+                System.out.println(ij);
+            }
+        }
+    }
+}
+
+// %% Method overloading 
+// https://www.w3schools.com/java/java_methods_overloading.asp
+class S7 extends S {
+    void m1() {
+    }
+}
